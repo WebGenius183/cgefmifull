@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="hero">
+            <div class="content">
+                <h1>Events</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="events">
+    {% for e in events %}
+    <div class="event" style="background-image: url('{{ e.image.url }}');">
+        <div class="title">
+            <h1>{{ e.title }}</h1>
+        </div>
+        <div class="date">
+            <span>{{ e.date }}</span>
+        </div>
+        <div class="time">
+            <span>{{ e.time }}</span>
+        </div>
+    </div>
+    {% endfor %}
+
+
+    </div>
+
+
+{% endblock content %}

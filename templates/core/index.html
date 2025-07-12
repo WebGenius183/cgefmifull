@@ -1,0 +1,90 @@
+
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="hero">
+            <div class="content">
+                <h1>Welcome to Christ Gospel Evangelical Fire Ministry International</h1>
+                {% for l in lives %}
+                    <button><a href="{{ l.link }}">Watch us live</a></button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="image">
+            <img src="{% static './asset/logo.png' %}" alt="">
+        </div>
+        <div class="content">
+            <h1>Welcome to CGEFMI</h1>
+            <h2>Christ Gospel Evangelical Fire Ministry International, led by a dynamic and anointed man. Pastor Rilwan Olowo Adamu and his amiable wife, Pastor Mrs. Precious Abiodun Rilwan. Surrounded by a Board of Trustees and dedicated, respected Leaders.</h2>
+            <a href="about"><button>Read More</button></a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <h1>Our Latest Events</h1>
+        <button><a href="events">View Events +</a></button>
+    </div>
+
+    <div class="testimonials">
+        <div class="test">
+            <h1>Testimonies</h1>
+        </div>
+        <div class="testi">
+            <div class="testimo hidden">
+                <h2>God delivered me despite my ignorance. He sent a good Samaritan to me and now my entire family believes that truly, the power of God is present in CGEFMI.</h2>
+            </div>
+            <div class="testimo hidden">
+                <h2>I was kidnapped on my way to work but reminded God of His covenant. The kidnappers returned all they took and set me free unharmed!</h2>
+            </div>
+            <div class="testimo hidden">
+                <h2>My child was sick and hopeless. After attending CGEFMI service and prayer, full healing came. Glory to God for His presence here!</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <h1>Worship with Us</h1>
+        <button><a href="https://maps.app.goo.gl/14E3NPNL2zzbqMSL8">Find us</a></button>
+    </div>
+
+    <div class="sermon">
+        <div class="title">
+            <h1>watch our sermons</h1>
+        </div>
+        <div class="vidi">
+            
+            {% for s in sermons %}
+                <div class="container hidden">
+                    <div class="vid">
+                        <iframe 
+                            src="{{ s.link }}" 
+                            width="350" 
+                            height="220" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="text">
+                        <a href="{{ s.link }}">{{ s.title }}</a>
+                        <p>Date: {{ s.date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="about">
+                <a href="sermons"><button>view More</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <h1>Get In Touch</h1>
+        <button><a href="contact">Contact</a></button>
+    </div>
+    
+{% endblock content %}

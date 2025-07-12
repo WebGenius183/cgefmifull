@@ -1,0 +1,77 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static './asset/logo.png' %}" type="image/x-icon">
+    <script defer src="{% static 'script.js' %}"></script>
+    <title>CGEFMI</title>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="logo">
+                <img src="{% static './asset/logo.png' %}" alt="Logo">
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+
+            <div class="menu" id="menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="sermons">Sermons</a></li>
+                    <li><a href="events">Events</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="not" id="buttons">
+                {% for l in lives %}
+                <a href="{{ l.link }}"><button>Live</button></a>
+                {% endfor %}
+                <a href="#"><button type="submit" onclick="openPopup()">Offering</button></a>
+            </div>
+            
+        </div>
+
+        <div class="popup" id="popup">
+                <div class="text">
+                    <h2>Account Details</h2>
+                    <h2>Zenith Bank</h2>
+                    <p>USD: 5072074133</p>
+                    <p>Account Name: Christ Gospel Evangelical Fire Ministry Intl</p>
+                    <br>
+                    <p>or</p>
+                    <br>
+                    <p>NGN: 1225194189, 1228194850</p>
+                    <p>Account Name: Christ Gospel Evangelical Fire Ministry Intl</p>
+                    <button onclick="closePopup()">Close</button>
+                </div>
+        </div>
+
+    {% block content %}
+
+    {% endblock content %}
+
+<footer>
+        <div class="logo">
+            <img src="{% static './asset/logo.png' %}" alt="">
+        </div>
+        <div class="text">
+            <h1>Christ Gospel Evangelical Fire Ministry International</h1>
+            <h1>Address: Oredegbe Estate, Elewedu Off, Abim Hotel, Ajose, Ibeshe Road, Ikorodu</h1>
+        </div>
+        <div class="socials">
+            <a href="https://www.facebook.com/share/1M3cspKkxR"><img src="{% static './asset/icons/facebook.png' %}" alt=""></a>
+            <a href="https://www.instagram.com/cgefmi?igsh=bTYwbXpob28zOWx4"> <img src="{% static './asset/icons/instagram.png' %}" alt=""></a>
+            <a href="https://vm.tiktok.com/ZMSDAcQ5u/"><img src="{% static './asset/icons/tik-tok.png' %}" alt=""></a>
+            <a href="https://youtube.com/@cgefmitv?si=ssFlxmLxMcJyL0_g"><img src="{% static './asset/icons/youtube.png' %}" alt=""></a>
+        </div>
+    </footer>
+</body>
+
+</html>

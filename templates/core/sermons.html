@@ -1,0 +1,28 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="hero">
+            <div class="content">
+                <h1>Sermons & Messages</h1>
+                  <p style="color: white;">Watch powerful teachings and ministration from our services.</p>
+            </div>
+        </div>
+    </div>
+
+  <!-- Sermons Grid -->
+  <section class="vidi sermon-page">
+    <!-- Video Block 1 -->
+     {% for s in sermons %}
+        <div class="container">
+        <iframe src="{{ s.link }}" allowfullscreen></iframe>
+        <div class="text">
+            <a href="{{ s.link }}">{{ s.title }}</a>
+            <p>{{ s.date }}</p>
+        </div>
+        </div>
+    {% endfor %}
+  </section>
+
+
+{% endblock content %}
